@@ -35,6 +35,9 @@
 
 
     <style>
+        section.py-5.mt-4.progess-section {
+            display: none;
+        }
         .page-link {
             color: #000000;
         }
@@ -177,10 +180,10 @@
     </div>
 </section>
 
-<section class="my-5 container">
+<section class="my-5 container dnd">
     <div class="row justify-content-center">
         <div class="col-sm-6">
-            <form id="" method="get">
+            <form id="dmd" method="get">
             <h5 class="text-center mb-4">Search Printer</h5>
             <div class="input-group mb-3">
                   <input type="text" class="form-control" name="term" placeholder="Enter your printer model here..." aria-label="Search for printers">
@@ -204,7 +207,7 @@
                 <div class="absolute" style="position: absolute;top: 0;left: 0;width: 100%;">
                     <h3 class="pb-2">Epson <span>Printer</span></h3>
                 </div>
-                <img src="./assets/progressbar.gif" style="width: 100%; max-width: 600px;">
+                <img src="./assets/progressbar.gif" style="width: 100%; max-width: 600px;" class="prgs">
             </div>
        </div>
             
@@ -294,6 +297,14 @@
                 //$(this).closest('.card').fadeOut();
             })
         })
+        $(document).on('submit','#dmd', function(){
+            $('.progess-section').fadeIn();
+            $('.dnd').fadeOut();
+            var src = $('.prgs').attr("src");
+            $('.prgs').attr("src", "");
+            $('.prgs').attr("src", src);
+            return false;
+        });
     </script>
 
 
